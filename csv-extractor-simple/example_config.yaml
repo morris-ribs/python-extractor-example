@@ -1,25 +1,70 @@
 logger:
-    console:
-        level: INFO
+  console:
+    level: INFO
 
 cognite:
-    # Read these from environment variables
-    host: ${COGNITE_BASE_URL}
-    project: ${COGNITE_PROJECT}
+  # Read these from environment variables
+  host: ${COGNITE_BASE_URL}
+  project: ${COGNITE_PROJECT}
 
-    idp-authentication:
-        token-url: ${COGNITE_TOKEN_URL}
-        client-id: ${COGNITE_CLIENT_ID}
-        secret: ${COGNITE_CLIENT_SECRET}
-        scopes:
-            - ${COGNITE_BASE_URL}/.default
+  idp-authentication:
+    token-url: ${COGNITE_TOKEN_URL}
+    client-id: ${COGNITE_CLIENT_ID}
+    secret: ${COGNITE_CLIENT_SECRET}
+    scopes:
+      - ${COGNITE_BASE_URL}/.default
 
-    extraction-pipeline:
-      external-id: ${EXTRACTION_PIPELINE_EXT_ID}
+  extraction-pipeline:
+    external-id: ${EXTRACTION_PIPELINE_EXT_ID}
 
 files:
-  - path: example.csv
-    key-column: Title
+  - path: csv_files/oslo.csv
+    key-column: external_id
     destination:
-        database: test_db
-        table: movies
+      database: src:001:sap:db
+      table: assets
+  - path: csv_files/hannover.csv
+    key-column: external_id
+    destination:
+      database: src:001:sap:db
+      table: assets
+  - path: csv_files/nuremberg.csv
+    key-column: external_id
+    destination:
+      database: src:001:sap:db
+      table: assets
+  - path: csv_files/marseille.csv
+    key-column: external_id
+    destination:
+      database: src:001:sap:db
+      table: assets
+  - path: csv_files/houston.csv
+    key-column: external_id
+    destination:
+      database: src:001:sap:db
+      table: assets
+  - path: csv_files/sao_paulo.csv
+    key-column: external_id
+    destination:
+      database: src:001:sap:db
+      table: assets
+  - path: csv_files/kuala_lumpur.csv
+    key-column: external_id
+    destination:
+      database: src:001:sap:db
+      table: assets
+  - path: csv_files/rotterdam.csv
+    key-column: external_id
+    destination:
+      database: src:001:sap:db
+      table: assets
+  - path: csv_files/london.csv
+    key-column: external_id
+    destination:
+      database: src:001:sap:db
+      table: assets
+  - path: csv_files/chicago.csv
+    key-column: external_id
+    destination:
+      database: src:001:sap:db
+      table: assets
